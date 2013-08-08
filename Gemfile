@@ -31,6 +31,7 @@ gem 'thin'
 
 gem 'haml'
 gem 'haml-rails'
+gem 'high_voltage'
 
 gem 'simplecov'
 
