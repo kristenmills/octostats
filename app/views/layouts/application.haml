@@ -6,4 +6,11 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    = yield
+    %nav.navbar
+      .container
+        .navbar-inner
+          = link_to 'OctoStats', '/', class: 'navbar-brand'
+          .pull-right
+            = render_navigation expand_all: true
+    .container
+      = yield

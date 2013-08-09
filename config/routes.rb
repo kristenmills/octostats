@@ -3,8 +3,10 @@ Octostats::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'high_voltage/pages#show', id: 'home'
 
+  get '/:username' => 'user#show', as: :user
+  get '/:username/:repo' => 'repository#show', as: :repo
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -39,7 +41,7 @@ Octostats::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
