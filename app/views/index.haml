@@ -3,6 +3,6 @@
 .row
   .col-4.col-offset-4
     = form_tag('javascript:user.call(this);', method: "get", class: "form-inline") do
-      = text_field_tag(:username, nil, class: 'form-control', placeholder: 'Type usename here...')
-      = submit_tag('Find', class: 'btn btn-default', style: 'display: none;')
+      = text_field_tag(:username, class: 'form-control', placeholder: 'Type usename here...', id: 'username')
+      = submit_tag('Find', class: 'btn btn-default', style: 'display: none;', id: 'find')
 %hr

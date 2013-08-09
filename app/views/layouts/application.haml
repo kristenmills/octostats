@@ -2,15 +2,8 @@
 %html
   %head
     %title Octostats
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
-    = csrf_meta_tags
+    = stylesheet_link_tag    "application", media: "all"
+    = javascript_include_tag "application"
   %body
-    %nav.navbar
-      .container
-        .navbar-inner
-          = link_to 'OctoStats', '/', class: 'navbar-brand'
-          .pull-right
-            = render_navigation expand_all: true
     .container
       = yield
