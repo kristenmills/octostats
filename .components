@@ -4,6 +4,6 @@
 :mock: none
 :script: jquery
 :renderer: haml
-:stylesheet: none
+:stylesheet: sass
 :namespace: Octostats
 :migration_format: number
