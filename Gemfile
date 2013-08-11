@@ -19,6 +19,12 @@ gem 'haml'
 gem 'sass'
 gem 'coffee-script'
 
+# enable js minification
+gem 'uglifier'
+
+# enable css compression
+gem 'yui-compressor'
+
 # Test requirements
 gem 'rspec', group: 'test'
 gem 'rack-test', require: 'rack/test', group: 'test'
