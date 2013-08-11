@@ -26,9 +26,9 @@ module Octostats
     get '/:username' do
       @username = params[:username]
       begin
-        @client.user(@username)
+        @repos = @client.repos(@username)
         render 'user/show'
-      rescue
+      rescue Octokit::NotFound
         render 'user/notfound'
       end
     end
@@ -39,7 +39,7 @@ module Octostats
       begin
         @client.repo("#{@username}/#{@repo}")
         render 'repo/show'
-      rescue
+      rescue Octokit::NotFound
         render 'repo/notfound'
       end
     end

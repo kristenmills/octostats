@@ -1,2 +1,14 @@
-.page-header
-  %h1= @username
+%h1.lighter= "#{@username}"
+.row
+  .col-sm-6.col-lg-8
+  .col-12.col-sm-6.col-lg-4
+    %ul.list-group
+      - @repos.each do |repo|
+        %li.list-group-item.gray-background
+          %span.badge.gray-background
+            %a.no-decoration{href:"http://github.com/#{@username}/#{repo['name']}"}
+              %i.icon-github.icon-2x.has-tooltip{:'data-toggle' => 'tooltip',  :'data-original-title' =>  'View on Github'}
+          = link_to repo['name'], "/#{@username}/#{repo['name']}", class: 'lead'
+
+:javascript
+  $(".has-tooltip").tooltip();
