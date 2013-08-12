@@ -1,5 +1,5 @@
+%h4.lighter.pull-right= SharedHelper.last_updated @client
 %h1.lighter= "#{@user.username}"
-%h4.lighter= @client.rate_limit_remaining
 .row
   .col-sm-6.col-lg-8
   .col-12.col-sm-6.col-lg-4
@@ -9,7 +9,7 @@
           %span.badge.gray-background
             %a.no-decoration{href:"http://github.com/#{@user.username}/#{repo.name}"}
               %i.icon-github.icon-2x.has-tooltip{:'data-toggle' => 'tooltip',  :'data-original-title' =>  'View on Github'}
-          = link_to repo['name'], "/#{@user.username}/#{repo['name']}", class: 'lead'
+          = link_to repo.name, "/#{@user.username}/#{repo.name}", class: 'lead'
 
 :javascript
   $(".has-tooltip").tooltip();
