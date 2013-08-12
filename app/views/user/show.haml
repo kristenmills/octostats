@@ -14,6 +14,8 @@
               %br
               %strong Created:
               = @user.user.created_at.strftime('%b %d, %Y')
+      .col-12.col-sm.col-lg-6
+    #languages
   .col-12.col-sm-6.col-lg-4.pull-right
     %ul.list-group
       - @user.repos.each do |repo|
@@ -23,5 +25,7 @@
               %i.icon-github.icon-2x.has-tooltip{:'data-toggle' => 'tooltip',  :'data-original-title' =>  'View on Github'}
           = link_to repo.name, "/#{@user.user.login}/#{repo.name}", class: 'lead'
 
+:coffee
+  #{partial 'highcharts/pie_chart', locals: {id: 'languages', name: 'Repositories by Language', data: SharedHelper.to_data(@user.languages)}}
 :javascript
   $(".has-tooltip").tooltip();

@@ -1,0 +1,33 @@
+$ ->
+    $('<%= "##{id}" %>').highcharts(
+        chart :
+            type: 'pie'
+        ,
+        title:
+            useHTML: true,
+            style:
+                'white-space': 'normal',
+                'width':'200px',
+                'left':'0px',
+                'font-weight':'bold'
+            ,
+            text: <%= "'#{name}'" %>
+        ,
+        tooltip:
+            pointFormat: 'Precent: <b>{point.percentage:.1f}%</b>'
+        ,
+        plotOptions:
+            pie:
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels:
+                    enabled: true,
+                    color: '#000000',
+                    connectorColor: '#000000',
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+        ,
+        series: [
+            name: <%= "'#{name}'" %>,
+            data: <%= data %>
+        ]
+    )
