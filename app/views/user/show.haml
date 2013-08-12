@@ -1,15 +1,27 @@
 %h4.lighter.pull-right= SharedHelper.last_updated @client
-%h1.lighter= "#{@user.username}"
+%h1.lighter= "#{@user.user.login}"
 .row
-  .col-sm-6.col-lg-8
-  .col-12.col-sm-6.col-lg-4
+  .col-12.col-sm-6.col-lg-8
+    .row
+      .col-12.col-sm-6.col-lg-6
+        .media
+          %img.img-responsive.pull-left.media-object{src: UserHelper.gravatar_url(@user)}
+          .media-body
+            %h4.meadia-header Basic Facts
+            %p
+              %strong Name:
+              = @user.user.name
+              %br
+              %strong Created:
+              = @user.user.created_at.strftime('%b %d, %Y')
+  .col-12.col-sm-6.col-lg-4.pull-right
     %ul.list-group
       - @user.repos.each do |repo|
         %li.list-group-item.gray-background
           %span.badge.gray-background
-            %a.no-decoration{href:"http://github.com/#{@user.username}/#{repo.name}"}
+            %a.no-decoration{href:"http://github.com/#{@user.user.login}/#{repo.name}"}
               %i.icon-github.icon-2x.has-tooltip{:'data-toggle' => 'tooltip',  :'data-original-title' =>  'View on Github'}
-          = link_to repo.name, "/#{@user.username}/#{repo.name}", class: 'lead'
+          = link_to repo.name, "/#{@user.user.login}/#{repo.name}", class: 'lead'
 
 :javascript
   $(".has-tooltip").tooltip();

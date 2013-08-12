@@ -35,7 +35,5 @@ gem 'padrino', '0.11.3'
 # Use Sprockets
 gem 'padrino-sprockets', require: 'padrino/sprockets'
 
-gem 'high_voltage'
 gem 'simplecov'
-gem 'simple-navigation-bootstrap'
 gem 'octokit', '~>2.0.0.rc2'

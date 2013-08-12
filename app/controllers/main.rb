@@ -17,7 +17,6 @@ Octostats::App.controller do
   get :index, with: :username, cache: true do
     expires_in 3600
     begin
-      # render 'shared/loading'
       @user = User.new(params[:username], @client)
       render 'user/show'
     rescue Octokit::NotFound
