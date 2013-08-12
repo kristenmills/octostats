@@ -8,7 +8,6 @@ GEM
     activesupport (3.2.14)
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
-    addressable (2.3.5)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
@@ -18,13 +17,10 @@ GEM
     eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    faraday (0.8.8)
-      multipart-post (~> 1.2.0)
-    faraday_middleware (0.9.0)
-      faraday (>= 0.7.4, < 0.9)
+    faraday (0.9.0.rc5)
+      multipart-post (~> 1.1)
     haml (4.0.3)
       tilt
-    hashie (2.0.5)
     high_voltage (1.2.4)
     hike (1.2.3)
     http_router (0.11.0)
@@ -37,14 +33,8 @@ GEM
     mime-types (1.23)
     multi_json (1.7.8)
     multipart-post (1.2.0)
-    netrc (0.7.7)
-    octokit (1.25.0)
-      addressable (~> 2.2)
-      faraday (~> 0.8)
-      faraday_middleware (~> 0.9)
-      hashie (~> 2.0)
-      multi_json (~> 1.3)
-      netrc (~> 0.7.7)
+    octokit (2.0.0.rc2)
+      sawyer (~> 0.1.0)
     open4 (1.3.0)
     padrino (0.11.3)
       padrino-admin (= 0.11.3)
@@ -93,6 +83,9 @@ GEM
       diff-lcs (>= 1.1.3, < 2.0)
     rspec-mocks (2.14.2)
     sass (3.2.10)
+    sawyer (0.1.0)
+      faraday (~> 0.9.rc5)
+      uri_template (~> 0.5.0)
     simple-navigation (3.11.0)
       activesupport (>= 2.3.2)
     simple-navigation-bootstrap (0.0.4)
@@ -122,6 +115,7 @@ GEM
     uglifier (2.1.2)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    uri_template (0.5.3)
     url_mount (0.2.1)
       rack
     yui-compressor (0.9.6)
@@ -134,7 +128,7 @@ DEPENDENCIES
   coffee-script
   haml
   high_voltage
-  octokit
+  octokit (~> 2.0.0.rc2)
   padrino (= 0.11.3)
   padrino-sprockets
   rack-test

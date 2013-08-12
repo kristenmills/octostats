@@ -6,9 +6,11 @@ module Octostats
     register Padrino::Mailer
     register Padrino::Helpers
     register Padrino::Sprockets
+    register Padrino::Cache
     sprockets minify: (Padrino.env == :production)
 
     enable :sessions
+    enable :caching
 
     error 404 do
       render 'errors/404'
