@@ -10,7 +10,7 @@
             %h4.meadia-header Basic Facts
             %p
               %strong Name:
-              = @user.user.name
+              = @user.user.name if @user.user.methods.include?(:name)
               %br
               %strong Created:
               = @user.user.created_at.strftime('%b %d, %Y')

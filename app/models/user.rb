@@ -9,6 +9,7 @@ class User
     @client = client
     @user = @client.user(username)
     @repos = @client.repos(username)
+    @repos.sort!{|a, b| b.watchers_count <=> a.watchers_count }
     process_events @client.user_public_events(username)
     language_dist
   end
