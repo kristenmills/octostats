@@ -14,8 +14,12 @@
               %br
               %strong Created:
               = @user.user.created_at.strftime('%b %d, %Y')
-      .col-12.col-sm.col-lg-6
     #languages
+    #events
+    %p.text-muted.text-center
+      Based on last 300 Events. For more detailed information on github event types, see
+      the
+      = link_to 'API docs', 'http://developer.github.com/v3/activity/events/types/'
   .col-12.col-sm-6.col-lg-4.pull-right
     %ul.list-group
       - @user.repos.each do |repo|
@@ -27,5 +31,6 @@
 
 :coffee
   #{partial 'highcharts/pie_chart', locals: {id: 'languages', name: 'Repositories by Language', data: SharedHelper.to_data(@user.languages)}}
+  #{partial 'highcharts/pie_chart', locals: {id: 'events', name: 'Distribution of Event Types', data: SharedHelper.to_data(@user.event_types)}}
 :javascript
   $(".has-tooltip").tooltip();

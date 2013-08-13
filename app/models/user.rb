@@ -1,6 +1,6 @@
 class User
 
-  attr_reader :user, :repos, :languages, :events
+  attr_reader :user, :repos, :languages, :events, :event_types
   # Creates a new user object based on user events
   #
   # @param username [String] the username that you are looking at
@@ -24,6 +24,10 @@ class User
     events.each do |event|
       @events[event.type] ||= Array.new
       @events[event.type] << event
+    end
+    @event_types = Hash.new
+    @events.each do |key,value|
+      @event_types[key.underscore.humanize.sub(' event', '')] = value.count
     end
   end
 
