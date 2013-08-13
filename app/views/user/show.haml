@@ -19,7 +19,7 @@
     %p.text-muted.text-center
       Based on last 300 Events. For more detailed information on github event types, see
       the
-      = link_to 'API docs', 'http://developer.github.com/v3/activity/events/types/'
+      = link_to 'API docs', 'http://developer.github.com/v3/activity/events/types/', target: '_blank'
   .col-12.col-sm-6.col-lg-4.pull-right
     %ul.list-group
       - @user.repos.each do |repo|
