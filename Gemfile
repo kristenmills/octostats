@@ -19,6 +19,12 @@ gem 'haml'
 gem 'sass'
 gem 'coffee-script'
 
+# enable js minification
+gem 'uglifier'
+
+# enable css compression
+gem 'yui-compressor'
+
 # Test requirements
 gem 'rspec', group: 'test'
 gem 'rack-test', require: 'rack/test', group: 'test'
@@ -29,7 +35,5 @@ gem 'padrino', '0.11.3'
 # Use Sprockets
 gem 'padrino-sprockets', require: 'padrino/sprockets'
 
-gem 'high_voltage'
 gem 'simplecov'
-gem 'simple-navigation-bootstrap'
-gem 'octokit'
+gem 'octokit', '~>2.0.0'

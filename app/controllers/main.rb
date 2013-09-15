@@ -1,7 +1,7 @@
 Octostats::App.controller do
 
   configure do
-    Octokit.auto_traversal = true
+    Octokit.auto_paginate = true
     Octokit.client_id = ENV['OCTOSTATS_KEY']
     Octokit.client_secret = ENV['OCTOSTATS_SECRET']
   end
@@ -14,12 +14,12 @@ Octostats::App.controller do
     render 'index'
   end
 
-  get :index, with: :username do
-    @username = params[:username]
+  get :index, with: :username, cache: true do
+    expires_in 3600
     begin
-      @client.user(@username)
+      @user = User.new(params[:username], @client)
       render 'user/show'
-    rescue
+    rescue Octokit::NotFound
       render 'errors/notfound'
     end
   end
@@ -30,7 +30,7 @@ Octostats::App.controller do
     begin
       @client.repo("#{@username}/#{@repo}")
       render 'repo/show'
-    rescue
+    rescue Octokit::NotFound
       render 'errors/notfound'
     end
   end
