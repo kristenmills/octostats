@@ -36,4 +36,4 @@ gem 'padrino', '0.11.3'
 gem 'padrino-sprockets', require: 'padrino/sprockets'
 
 gem 'simplecov'
-gem 'octokit', '~>2.0.0.rc2'
+gem 'octokit', '~>2.0.0'

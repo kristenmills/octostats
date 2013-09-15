@@ -1,5 +1,8 @@
 %h4.lighter.pull-right= SharedHelper.last_updated @client
-%h1.lighter= "#{@user.user.login}"
+%h1.lighter
+  = "#{@user.user.login}"
+  %a.no-decoration{href:"http://github.com/#{@user.user.login}", target: '_blank'}
+    %i.icon-github.has-tooltip{:'data-toggle' => 'tooltip',  :'data-original-title' =>  'View on Github'}
 .row
   .col-12.col-sm-6.col-lg-8
     .row
@@ -25,8 +28,8 @@
       - @user.repos.each do |repo|
         %li.list-group-item.gray-background
           %span.badge.gray-background
-            %a.no-decoration{href:"http://github.com/#{@user.user.login}/#{repo.name}"}
-              %i.icon-github.icon-2x.has-tooltip{:'data-toggle' => 'tooltip',  :'data-original-title' =>  'View on Github'}
+            %a.no-decoration{href:"http://github.com/#{@user.user.login}/#{repo.name}", target: '_blank'}
+              %i.icon-github.icon-2x.has-tooltip{data: {toggle: 'tooltip',  :'original-title' =>  'View on Github'}}
           = link_to repo.name, "/#{@user.user.login}/#{repo.name}", class: 'lead'
 
 :coffee
