@@ -33,3 +33,5 @@ gem 'high_voltage'
 gem 'simplecov'
 gem 'simple-navigation-bootstrap'
 gem 'octokit'
+
+gem 'newrelic_rpm'

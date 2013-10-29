@@ -34,6 +34,7 @@ GEM
     multi_json (1.7.8)
     multipart-post (1.2.0)
     netrc (0.7.7)
+    newrelic_rpm (3.6.8.168)
     octokit (1.25.0)
       addressable (~> 2.2)
       faraday (~> 0.8)
@@ -124,6 +125,7 @@ DEPENDENCIES
   coffee-script
   haml
   high_voltage
+  newrelic_rpm
   octokit
   padrino (= 0.11.3)
   padrino-sprockets
