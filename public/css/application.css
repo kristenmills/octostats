@@ -1,0 +1,14 @@
+.no-decoration,
+.no-decoration:hover,
+.no-decoration:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+.gray-background{
+  background-color: #EEE !important;
+}
+
+.lighter{
+  font-weight: lighter;
+}

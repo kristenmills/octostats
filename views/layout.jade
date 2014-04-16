@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title Octostats
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/application.css')
+    script(src='/bower_components/jquery/dist/jquery.min.js')
+    script(src='/bower_components/bootstrap/dist/js/bootstrap.min.js')
+  body
+    a(href='https://github.com/kristenmills/octostats', target='_blank')
+      img(style='position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px;',
+           src='http://aral.github.com/fork-me-on-github-retina-ribbons/right-green@2x.png',
+           alt='Fork me on GitHub')
+    .container
+      .page-header
+        a.no-decoration(href='/')
+          h1.text-center.lighter(style='font-size: 70px;') OctoStats
+        h3.text-muted.text-center.lighter Hip and happening Github stats.
+      block content
+      hr
+      .text-center
+        small Copyright (c) 2013 Kristen Mills
